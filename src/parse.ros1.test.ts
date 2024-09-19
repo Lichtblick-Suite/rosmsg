@@ -7,7 +7,7 @@
 //   found at http://www.apache.org/licenses/LICENSE-2.0
 //   You may not use this file except in compliance with the License.
 
-import { MessageDefinition } from "@foxglove/message-definition";
+import { MessageDefinition } from "@lichtblick/message-definition";
 
 import { fixupTypes, parse } from "./parse";
 
@@ -253,8 +253,8 @@ describe("parseMessageDefinition", () => {
       int32 bar=-11 # Comment # another comment
       float32 baz= \t -32.25
       bool someBoolean = 0
-      string fooStr = Foo    ${""}
-      string EMPTY1 =  ${""}
+      string fooStr = Foo    
+      string EMPTY1 =  
       string EMPTY2 =
       string HASH = #
       string EXAMPLE="#comments" are ignored, and leading and trailing whitespace removed

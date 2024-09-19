@@ -18,7 +18,7 @@ const md5Tests: Md5Test[] = [
 int32 bar=-11 # Comment # another comment
 string test
  float32 baz= \t	 -32.25
-bool someBoolean = 0       ${""}
+bool someBoolean = 0       
   float64[] values
 string fooStr = Foo
 string EXAMPLE="#comments" are ignored, and leading and trailing whitespace removed`,

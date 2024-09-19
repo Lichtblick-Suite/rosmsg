@@ -11,7 +11,7 @@ describe("stringify", () => {
       bool someBoolean = 0
       Point[] points
       int64 A = 0000000000000001
-      string fooStr = Foo    ${""}
+      string fooStr = Foo    
       string EXAMPLE="#comments" are ignored, and leading and trailing whitespace removed
       ============
       MSG: geometry_msgs/Point
@@ -41,7 +41,7 @@ float64 x`);
     const messageDefinition = `
       string<=5 str1 'abc'
       string str2 "def"
-      int8[<=2] arr1 [ 1 ,-1 ]    ${""}
+      int8[<=2] arr1 [ 1 ,-1 ]    
       string<=1[<=3] arr2   # comment
       bool a  true
       float32 b  -1.0

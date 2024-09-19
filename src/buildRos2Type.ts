@@ -1,4 +1,4 @@
-import { MessageDefinition, MessageDefinitionField } from "@foxglove/message-definition";
+import { MessageDefinition, MessageDefinitionField } from "@lichtblick/message-definition";
 
 /**
  * Parser for ROS 2 type definition lines.
@@ -122,6 +122,7 @@ function parseStringLiteral(maybeQuotedStr: string): string {
     }
   }
   if (
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     !new RegExp(String.raw`^(?:[^\\${quoteThatMustBeEscaped}]|${STRING_ESCAPES})*$`).test(str) ==
     undefined
   ) {
