@@ -1,11 +1,11 @@
-import { MessageDefinition, DefaultValue } from "@foxglove/message-definition";
+import { MessageDefinition, DefaultValue } from "@lichtblick/message-definition";
 
 // Converts a ROS message definition (http://wiki.ros.org/msg) into a canonical
 // message description format that is suitable for MD5 checksum generation
 export function stringify(msgDefs: MessageDefinition[]): string {
   let output = "";
   for (let i = 0; i < msgDefs.length; i++) {
-    const msgDef = msgDefs[i] as MessageDefinition;
+    const msgDef = msgDefs[i]!;
     const constants = msgDef.definitions.filter(({ isConstant }) => isConstant);
     const variables = msgDef.definitions.filter(
       ({ isConstant }) => isConstant == undefined || !isConstant,
@@ -30,8 +30,8 @@ export function stringify(msgDefs: MessageDefinition[]): string {
           def.arrayLength != undefined
             ? String(def.arrayLength)
             : def.arrayUpperBound != undefined
-            ? `<=${def.arrayUpperBound}`
-            : "";
+              ? `<=${def.arrayUpperBound}`
+              : "";
         const array = def.isArray === true ? `[${arrayLength}]` : "";
         const defaultValue =
           def.defaultValue != undefined ? ` ${stringifyDefaultValue(def.defaultValue)}` : "";
